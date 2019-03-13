@@ -1,0 +1,34 @@
+{
+  "name": "markdown-description",
+  "version": "1.0.0",
+  "description": "Parse description from Markdown content",
+  "keywords": [
+    "markdown",
+    "md",
+    "description",
+    "summary",
+    "intro",
+    "parse",
+    "extract"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/phortuin/markdown-description",
+  "author": {
+    "name": "Anne Fortuin",
+    "url": "phortuin.nl"
+  },
+  "repository": "phortuin/markdown-description",
+  "main": "index.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "devDependencies": {
+    "tape": "4.10.1"
+  },
+  "dependencies": {
+    "remove-markdown": "0.3.0"
+  }
+}
