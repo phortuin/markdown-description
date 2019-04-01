@@ -47,6 +47,14 @@ let withH2 = `
 I am the description
 `
 
+let manyParagraphs = `
+# I am skipped
+
+For formatting purposes
+I use line breaks.
+But the description should be this whole text
+`
+
 test('Get markdown description', t => {
 	t.plan(9)
 	t.error(markdownDescription())
@@ -58,4 +66,11 @@ test('Get markdown description', t => {
 	t.equals(markdownDescription(withList), 'My battery is low and it’s getting dark')
 	t.equals(markdownDescription(withOrderedList), 'My battery is low and it’s getting dark')
 	t.equals(markdownDescription(withH2), 'I am the description')
+})
+
+test('Get markdown description with concatenated lines', t => {
+	t.plan(3)
+	t.equals(markdownDescription(manyParagraphs, { concatLines: true }), 'For formatting purposes I use line breaks. But the description should be this whole text')
+	t.equals(markdownDescription(withList, { concatLines: true }), 'My battery is low and it’s getting dark Dyin’ ain’t much of a living, boy')
+	t.equals(markdownDescription(withH2, { concatLines: true }), 'I am the description')
 })

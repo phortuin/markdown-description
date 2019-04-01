@@ -1,6 +1,6 @@
 {
   "name": "markdown-description",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Parse description from Markdown content",
   "keywords": [
     "markdown",
